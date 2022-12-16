@@ -5,3 +5,7 @@ test = Person(lastname="Lustig", firstname="Peter", middle_names=("Fritz"), gend
               place_of_death="Berlin")
 
 print(test.lastname)
+
+
+if __name__ == "__main__":
+    pass

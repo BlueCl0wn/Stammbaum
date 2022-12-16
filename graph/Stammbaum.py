@@ -22,11 +22,9 @@ class Stammbaum(nx.DiGraph):
         :return:
         """
         if person is Person:
-            print(person)
             self.add_edges_from(person.get_relatives)
         if person is not Person:
             for i in person:
-                print(i.get_relatives())
                 self.add_edges_from(i.get_relatives())
 
     def write_graph(self, uri: str) -> None:
@@ -38,3 +36,7 @@ class Stammbaum(nx.DiGraph):
         :return:
         """
         nx.write_gml(self, uri)
+
+
+if __name__ == "__main__":
+    pass

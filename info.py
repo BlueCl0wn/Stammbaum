@@ -7,10 +7,10 @@ c = Person(lastname="Petersen", firstname="Käthe", gender="male")
 a.add_relatives(parent1=b, parent2=c)
 b.add_relatives(children=a)
 c.add_relatives(children=a)
-print(str(a))
-#a.debug()
+
 persons = [a, b, c]
 
 B = Stammbaum(persons)
 B.nodes()
 B.edges()
+B.write_graph("test")

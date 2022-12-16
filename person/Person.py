@@ -2,7 +2,6 @@ import datetime
 from dataclasses import dataclass
 
 
-@dataclass
 class Person:
     """
     Class describing a person with various variables.
@@ -49,9 +48,9 @@ class Person:
 
         self.parent1 = parent1  # dad (if applicable)
         self.parent2 = parent2  # mom (if applicable)
-        if parent1 == biological_father:
+        if biological_father is None:
             self.biological_father = self.parent1
-        if parent2 == biological_mother:
+        if biological_mother is None:
             self.biological_mother = self.parent2
         self.children = children
 
@@ -64,7 +63,7 @@ class Person:
     def __str__(self) -> str:
         name = (self.firstname, self.middle_names, self.lastname)
         temp = [i for i in name if i is not None]
-        return " ".join(name)
+        return " ".join(temp)
 
     def add_relatives(self, **kwargs):
         self.__dict__.update(kwargs)
