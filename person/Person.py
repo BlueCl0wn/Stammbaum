@@ -10,11 +10,12 @@ class Person:
     lastname: str
     firstname: str
     nickname: str
-    middle_names: tuple[str]
+    middle_names: tuple[str] or str
     birth_name: str
 
     gender: str
 
+    # TODO dates can be changed to actual date format instead of str
     date_of_birth: str
     date_of_death: str
     place_of_birth: str
@@ -63,9 +64,12 @@ class Person:
     def __str__(self) -> str:
         name = (self.firstname, self.middle_names, self.lastname)
         temp = [i for i in name if i is not None]
-        return " ".join(temp)
+        res = " ".join(temp)
+        print(f"res = {res}")  # TODO remove print
+        return res
 
     def add_relatives(self, **kwargs):
+
         self.__dict__.update(kwargs)
 
     def get_relatives(self) -> list:

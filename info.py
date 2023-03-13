@@ -13,4 +13,5 @@ persons = [a, b, c]
 B = Stammbaum(persons)
 B.nodes()
 B.edges()
+print("dgg")
 B.write_graph("test")
